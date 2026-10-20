@@ -1,6 +1,6 @@
 # What Does Encrypted Traffic Reveal? Application Fingerprinting from Network Metadata
 
-**DD239 Computer Security | Project: Network Traffic Analysis**  
+**DD2391 Computer Security | Project: Network Traffic Analysis**  
 Aylin Dora Leblebici | David Johnsson Kärrbrink | Deniz Kandemir | Nikolaj Goj
 
 ## 1. Problem statement
