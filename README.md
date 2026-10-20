@@ -9,7 +9,7 @@ This project asks: “Can a passive observer infer what a user is doing, even th
 
 ### Threat model
 
-- **Attacker:** Passive network observer, between user & the internet. (for eg. ISP, WI-FI access point operator or anyone who can can mirror the traffic on the network)
+- **Attacker:** Passive network observer, between user & the internet. (for eg. ISP, WI-FI access point operator or anyone who can mirror the traffic on the network)
 - **Attacker capabilities:** Can observe every packet that crosses the network link, including timestamp, size in bytes, and source/destination IP.
 - **Attacker limitation:** Cannot decrypt payload content, cannot modify or inject traffic.
 - **Attacker goal:** Determine which application the user is currently using, based on encrypted traffic metadata.
@@ -113,7 +113,7 @@ Example output:
 How to run (macOS):
 
 ```bash
-# 1. Install Wireshark
+# 1. Install Wireshark (select "Install ChmodBPF" so capturing works without sudo)
 # 2. Set up Python
 python3 -m venv venv
 source venv/bin/activate
@@ -193,7 +193,7 @@ Observations from live testing:
 - **Limited dataset:** 74 captures producing 527 windows is small by machine-learning standards. A larger, more diverse dataset might yield different accuracy figures.
 - **No adversarial defenses tested:** We did not evaluate countermeasures such as traffic padding, tunneling through a VPN with constant-rate cover traffic, or packet-size randomisation. The classifier's robustness against such defenses is unknown.
 - **Background traffic:** Operating-system updates, cloud sync, and other background processes inject noise into the captures. We tried to minimize this during collection but could not eliminate it completely.
-- **Uneven amount of captures from each application:** The captures for Discord and Soundcloud are less than the other applications which could skew the model’s ability to detect traffic from those applications compared to the ones with more captures. However, as previously mentioned, this is handled by using `class_weight='balanced'` in Random Forest.
+- **Uneven amount of captures from each application:** The captures for Soundcloud is less than the other applications which could skew the model’s ability to detect traffic from this application compared to the ones with more captures. However, as previously mentioned, this is handled by using `class_weight='balanced'` in Random Forest.
 
 ## 5. Individual contributions
 
