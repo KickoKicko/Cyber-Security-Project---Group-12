@@ -138,7 +138,7 @@ As a reference point we use a baseline that always predicts the largest class (Y
 
 Accuracy: 85.4%, compared with a baseline of 29.0%.
 
-![Classification report](figures/classification-report.jpeg)
+![Classification report](figures/scores_tables.jpeg)
 
 ### 4.3 Which applications are confused?
 
@@ -151,7 +151,7 @@ In summary: applications of a different type (streaming vs. browsing) are separa
 
 ### 4.4 Which metadata leaks the most?
 
-![Top 10 most revealing features](figures/feature-importance.jpeg)
+![Top 10 most revealing features](figures/most-revealing.jpeg)
 
 The most important feature by far is `in_size_max`, the largest incoming packet in a window (importance ≈ 0.125, about twice the next feature). A likely explanation is that applications use different transport protocols and packet-size limits (for example QUIC vs. TCP, or small real-time voice packets). The maximum packet size therefore acts as a protocol fingerprint.
 
@@ -165,7 +165,7 @@ The same evaluation was repeated with different window lengths:
 |---|---:|---:|---:|---:|---:|
 | Accuracy | 81.2% | 84.0% | 85.4% | 84.7% | 89.2% |
 
-![Observation time vs. accuracy](figures/observation-time-accuracy.jpeg)
+![Observation time vs. accuracy](figures/accuracy.jpeg)
 
 Two seconds of encrypted traffic are already enough to identify the application in 81% of cases.
 
