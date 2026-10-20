@@ -138,7 +138,7 @@ As a reference point we use a baseline that always predicts the largest class (Y
 
 Accuracy: 85.4%, compared with a baseline of 29.0%.
 
-![Classification report](figures/scores_tables.jpeg)
+![Classification report](figures/scores_table.jpeg)
 
 ### 4.3 Which applications are confused?
 
